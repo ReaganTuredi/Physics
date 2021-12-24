@@ -29,8 +29,8 @@ plt.plot(0,0,'ro')    #charge location
 
 for t in theta:
     ObservationLocation_changing = np.array([radius*np.cos(t), radius*np.sin(t)]) 
-    delta_changing = ObservationLocation_changing - SourceLocation_changing    # sepetation vector
-    E = k*Q*delta_changing/(np.linalg.norm(delta_changing))**3    #field
+    delta_changing = ObservationLocation_changing - SourceLocation_changing   #distance between observation and source location 
+    E = k*Q*delta_changing/(np.linalg.norm(delta_changing))**3    #E field
     E_new = np.linalg.norm(delta_changing)/np.linalg.norm(E)/2    
     plt.arrow(ObservationLocation_changing[0],ObservationLocation_changing[1],E_new*E[0],E_new*E[1])   
 #------------------------------------------------------------------#
